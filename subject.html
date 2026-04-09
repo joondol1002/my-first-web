@@ -3,97 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>코코넛</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&" />
+    <link rel="stylesheet" href="./style.css">
+    <style>
+
+    </style>
 </head>
+
 <body>
+    <header>
+        <h1>
+            <span class="material-symbols-outlined">agriculture</span>
+            새는 알을 깨고 나온다
+            <span class="material-symbols-outlined">sprinkler</span>
+        </h1>
+    </header>
+
+    <nav>
+       <a href="index.html">홈으로</a> |
+       <a href="subject.html">전공 탐구하기</a>
+       <a href="gallery.html">갤러리</a>
+    </nav>
+
     <main>
         <section class="agriculture-portfolio">
-            <article class="info-block distribution">
-                <h4>유통 구조 설계</h4>
-                <div class="step-guide">
-                    <span>생산자(나)</span> <span>로컬푸드 직매장</span>
-                    <span>최종 소비자</span>
+            <article class="crop-item">
+                <figure class="crop-image">
+                    <img src="Coconuts_-_single_and_cracked_open.jpg" alt="직접 재배한 농작물사진" />
+                    <figcaption>그림 1. 본인이 직접 재배한 농작물 실물</figcaption>
+                </figure>
+
+                <div class="crop-details">
+                    <h3>농작물 명칭: 코코넛</h3>
+                    <section class="info-block">
+                        <h4>재배 및 생산 특성</h4>
+                        <ul>
+                            <li><strong>품종:</strong> 코코넛야자수</li>
+                            <li><strong>재배 환경:</strong> 해안가 중심: 바닷바람에 강하고, 염분이 있는 토양에서도 견디는 능력이 탁월하여 주로 해안가에서 재배됩니다.</li>
+                        </ul>
+                    </section>
+
+                    <section class="info-block distribution">
+                        <h4> 유통 구조 설계</h4>
+                        <div class="step-guide">
+                            <span>생산자(나)</span> → <span>로컬푸드 직매장</span> → <span>최종 소비자</span>
+                        </div>
+                        <ul>
+                            <li><strong>물류 방식:</strong> 운송 및 보관: 코코넛은 신선도 유지가 중요하므로 주로 냉장 컨테이너를 통해 운송됩니다. 태국, 베트남 등지에서 생산된 코코넛은 도매시장 냉장 창고를 거쳐 슈퍼마켓, 음료 가게 등으로 유통됩니다.</li>
+                            <li><strong>판매 전략:</strong> 코코넛 판매는 건강 기능성(천연 수분 보충), 클린 라벨 트렌드, 그리고 지속 가능한 가치(친환경 포장, 다양한 활용도)에 집중하여 틈새 시장을 공략</li>
+                        </ul>
+                        <p><a href="https://namu.wiki/w/%EC%BD%94%EC%BD%94%EB%84%9B" class="my-button">코코넛에 대해 더 알아보기</a></p>
+                    </section>
                 </div>
-                <ul>
-                    <li>
-                        <strong>물류 방식:</strong> 저온 유통(cold chain) 활용 여부 등
-                    </li>
-                    <li><strong>판매 정략:</strong>직거래/온라인 마켓 등</li>
-                </ul>
             </article>
         </section>
+
         <section id="order-area">
             <hr>
-            <h2> 온라인 주문하기</h2>
-            <form>
+            <h2>📦 온라인 주문하기</h2>
+            <form id="orderForm">
                 <div class="input-row">
                     <div class="input-group">
-                    <label>주문자 성함</label>
-                    <input type="text" id="userName" placeholder="실명을 입력하세요">
+                        <label for="userName">주문자 성함</label>
+                        <input type="text" id="userName" placeholder="실명을 입력하세요">
+                    </div>
                 </div>
-                <div class="input-group">
-                    <label>연락처</label>
-                    <input type="text" id="userName" placeholder="010-0000-0000">
-                </div>
+
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="unitweight">구매 단위 선택</label>
+                        <select id="unitweight">
+                            <option value="15000">코코넛 1kg (15,000원)</option>
+                            <option value="35000">코코넛 3kg (35,000원)</option>
+                            <option value="45000">코코넛 5kg (45,000원)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="quantity">주문 수량 (박스)</label>
+                        <input type="number" id="quantity" value="1" min="1" max="10">
+                    </div>
                 </div>
 
                 <div class="input-group">
-                    <label>배송 방식 선택</label>
-                    <select>
-                        <option>일반 택배 (3,000원)</option>
-                        <option>신선 택배 배송 (5,000원)</option>
-                        <option>광주 로컬푸드 매장 픽업 (무료)</option>
+                    <label for="userPhone">연락처</label>
+                    <input type="text" id="userPhone" placeholder="010-0000-0000">
+                </div>
+
+                <div class="input-group">
+                    <label for="deliveryfee">배송 방식 선택</label>
+                    <select id="deliveryfee">
+                        <option value="3000">일반 택배(3000원)</option>
+                        <option value="5000">신선 새벽 배송(5000원)</option>
+                        <option value="0">광주 로컬푸드 매장 픽업(무료)</option>
                     </select>
                 </div>
 
                 <div class="input-group">
                     <label>배송 메시지</label>
                     <textarea placeholder="부재 시 문 앞에 놓아주세요"></textarea>
-                </div>  
+                </div>
 
                 <button type="button" class="order-btn" onclick="processOrder()">지금 바로 주문 완료</button>
-
-                <div id="receipt" class="receipt-box"></div>
-                </form>
+            </form>
+            
+            <div id="receipt" class="receipt-box"></div>
         </section>
     </main>
 
     <footer>
-        문의 : joondol1002@gmail.com, &copy; all right resevered by 2026 장준혁 
+        <p>&copy; 2026 장준혁 문의: joondol1002@gmail.com</p>
     </footer>
 
-
-
     <script>
-        function processOrder() {
-            // 1. 입력창(id)에서 값을 가져와 변수에 저장
-            let name = document.getElementById("userName").value;
-            let phone = document.getElementById("userPhone").value;
-            let messago = document.querySelector("textarea").value;
+    function processOrder() {
+        const name = document.getElementById("userName").value;
+        const phone = document.getElementById("userPhone").value;
+        const quantity = Number(document.getElementById("quantity").value);
+        let deliveryFee = Number(document.getElementById("deliveryfee").value);
 
-            // 2. 입력창에 내용이 비어있는지 검사 (|| 검사)
-            if (name === "" || phone === "") {
-                alert(" 성함과 연락처를 모두 입력해주세요!");
-                return;
-            }
+        const unitSelect = document.getElementById("unitweight");
+        const productPrice = Number(unitSelect.value);
+        const productName = unitSelect.options[unitSelect.selectedIndex].text;
 
-             // 3. 영수증 상자 찾아오기
-                let receipt = document.getElementById("receipt");
-
-            // .4 내영 채워넣기
-            receipt.innerHTML = `
-              <h3> 주문 확인 영수증</h3> 
-               <p><strong> 주문자:</strong> ${name} 님</p>
-              <p><strong>연락처:</strong> ${phone}</p>
-              <p><strong>요청사항:</strong> ${messae || "없음"}</p>
-              <hr>
-              <p style="texp-align:center;">주문해주셔서 감사합니다! </P>
-            `;
-
-            //5. 숨겨져 있던 영수증 상자 보여주기
-            receipt.style.display = "block";
-            
+  
+        if (name.trim() === "" || phone.trim() === "") {
+            alert("⚠️ 주문자 성함과 연락처를 모두 입력해 주세요!");
+            return;
         }
+
+        const basePrice = productPrice * quantity;
+        
+        let deliveryText = deliveryFee.toLocaleString() + "원";
+        if (basePrice >= 30000 && deliveryFee > 0) {
+            deliveryFee = 0;
+            deliveryText = "무료 (3만원 이상 구매혜택)";
+        } else if (deliveryFee === 0) {
+            deliveryText = "무료 (매장 픽업)";
+        }
+
+        const totalPrice = basePrice + deliveryFee;
+        const dateString = new Date().toLocaleString();
+
+        // 5. 영수증 출력
+        const receipt = document.getElementById("receipt");
+        receipt.innerHTML = `
+            <h3>📄 주문 확인 영수증</h3>
+            <p style="color: gray; font-size: 0.8em;">주문 시각: ${dateString}</p>
+            <hr>
+            <p><strong>주문자:</strong> ${name} 님</p>
+            <p><strong>연락처:</strong> ${phone}</p>
+            <p><strong>주문 상품:</strong> ${productName}</p>
+            <p><strong>주문 수량:</strong> ${quantity} 박스</p>
+            <p><strong>배송비:</strong> ${deliveryText}</p>
+            <hr>
+            <p style="font-size: 1.2em; margin-top: 10px;">
+                <strong>최종 결제 금액:</strong>
+                <span style="color:red; font-weight:bold;">${totalPrice.toLocaleString()}원</span>
+            </p>
+            <p style="text-align:center; margin-top:15px;">이용해 주셔서 감사합니다 🛍️</p>
+        `;
+
+        // 영수증 영역 보이기
+        receipt.style.display = "block";
+        
+        // 화면을 영수증 위치로 부드럽게 이동
+        receipt.scrollIntoView({ behavior: 'smooth' });
+    }
     </script>
 </body>
-</html>         
+</html>

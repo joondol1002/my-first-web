@@ -1,65 +1,106 @@
-#order-area {
-    margin-top: 60px;
-    padding: 30px;
-    background-color: #f4f9f4;
-    border: 1px solid #e0e0e0;
-    border-radius: 20px;
-}
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    max-width: 500px;
-}
-.input-group {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+    /* 1. 전체 배경색과 기본 폰트*/
+        body{
+        font-family: "Jua", sans-serif;
+        background: #b5b80b;
+        color: #3b1f02;
+        line-height: 1.7;
+        margin: 0;
+    }
+
+    header{background-color:#694e14 ;
+    color: #111e8f;
+text-align: center;
+padding: 50px 0;}
+
+nav{text-align: center;
+padding: 15px;
+background-color: 
+#b5b80b;}
+
+nav a {margin:0 15px;
+text-decoration: none;
+font-weight: bold;
+color: ;}
+
+img{display: block;
+margin: 40px auto;
+width: 550px;
+border-radius: 70%;
+border: 10px silver white;
+box-shadow: 0 10px 20px rgba(0, 0, 0, 1);}
+
+header,footer{padding: 50px 0;}
+
+main{width: 80%;
+max-width: 800px;
+margin: 40px auto;
+padding: 30px;
+background-color: white;
+border: 1px solid #ddd;}
+
+.my-button{display: inline-block;
+padding: 15px 30px;
+background-color: #3f72af;
+color: white;
+text-decoration: none;
+border-radius: 30px;
+margin-top: 20px;
+transition: 0.3s;}
+.my-button:hover{background-color: #112d4e;
+        transform: translateY(-3px);}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 40
 }
 
-/* 1. 주문서 구역 전체 디자인 */
-#order-area {
-    margin-top: 60px;
-    padding: 30px;
-    background-color:  #f4f9f4;
-    border: 1px solid #e0e0e0;
-    border-radius: 20px;
+/* 주문서 구역 전체 디자인*/    
+#order-area{
+        margin-top: 60px;
+        padding: 30px;
+        background-color: #f4f9f4;
+        border: 1px solid #e0e0e0;
+        border-radius: 20px;
+
+        /* flexbox 마법적용구역*/ 
+}
+form{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 500px;
+}
+/* 입력창 세부 정렬*/ 
+.input-group{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
 }
 
-/* Flexbox 마법 적용 구역 */
-form {
-    display: FLEX;
-    flex-direction: column;
-    gap: 20PX;
-    max-width: 500PX;
-}
-
-/* 3. 입력창 세부 정렬 */
-.input-group {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
+/*8강시작*/
 /* 1. 성함과 연락처 가로 정렬 */
 .input-row {
     display: flex;
     gap: 15px;
     margin-bottom: 20px;
 }
+
 .input-row .input-group {
-    flex: 1; /* 똑같은 비율로 칸 나눠 갖기 */
+    flex: 1; /* 같은 비율로 칸 나눠 갖기 */
 }
 
 /* 2. 클릭했을 때 강조되는 입력창 */
-.input-group input:focus
+.input-group input:focus,
 .input-group textarea:focus {
     outline: none;
-    border-color: #4caf50; /* n초록색 테두리 */
-    box-shadow: 0 0 8px rgba(76, 175, 80, 0.2); /*은은한 빛 효과 */
+    border-color: #4caf50; /* 초록색 테두리 */
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.2); /* 은은한 빛 효과 */
 }
 
-/* 배송 방식(select) 깔끔하게 만들기 */
+/* 3. 배달 방식(select) 깔끔하게 만들기 */
 select {
     width: 100%;
     padding: 10px;
@@ -68,18 +109,18 @@ select {
     background-color: white;
 }
 
-/* 입체적인 주문 버튼 스타일 */
+/* 4. 인지적인 주문 버튼 스타일 */
 .order-btn {
-    background-color: #2e7d32;
-    color: white;
-    padding: 15px;
-    border: none;
-    border-radius: 8px;
-    width: 100%;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.1s; /*변화를 부드럽게 */
+    background-color: #2e7d32; /*배경색 지정*/
+    color: white;  /*글자색:흰색*/
+    padding: 15px; /*안여백 15px*/
+    border: none; /*경계선 없음*/
+    border-radius: 8px; /*모서리를 둥글게*/
+    width: 100%; /*퍽: 부모의 100%*/
+    font-size: 18px; /*폰트 크기*/
+    font-weight: bold; /*두껍게*/
+    cursor: pointer; /*마우스 포인터 변경*/
+    transition: 0.1s; /* 변화를 부드 럽게 */
 }
 
 .order-btn:hover {
@@ -91,17 +132,48 @@ select {
     transform: translateY(5px); /* 누르면 더 깊게 내려감 */
 }
 
-.receipt-box {
-    margin-top: 30px;
+.receipt-box{
+        margin-top: 30px;
+        padding: 20px;
+        border: 2px dashed #4caf50;
+        background-color: #ffffff;
+        border-radius: 10px;
+        display: none;
+}
+.receipt-box h3{
+        color: #2e7d32;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+} 
+/* 갤러리 전용 디자인 */
+.display-box {
+    text-align: center;
+    background-color: #f0f0f0;
     padding: 20px;
-    border: 2px dashed #4caf50;
-    background-color: #ffffff;
-    border-radius: 10px;
-    display: none; 
+    border-radius: 15px;/* 모서리를 둥글게 깎아주는 속성*/
+    margin-bottom: 30px;
 }
 
-.receipt-box h3 {
-    color: #2e7d32;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
+#targetlmg {
+    transition: transform 0.3s ease; /*사진 바꿀 때 부드러운 효과*/
+}
+
+.thumb-list img {
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: 0.2s;
+    width: 100px; /* 썸네일 크기 고정 */
+    height: 100px;
+    object-fit: cover; /* 사진이 찌그러지지 않게 꽉 채워 자르기! (c로 시작)*/
+    border-radius: 10PX;
+}
+
+/*사용지기 마우스를 올렸을 때의 반응 */
+.thumb-list img :hover{
+    border-color: #3f72af;
+    transform: scale(1.1); /* 사진을 1.1배로 살짝 키워서 클릭하고 싶게 만들기! */
+}
+
+#targetlmg {
+    border-radius: 0 !important;
 }
