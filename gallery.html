@@ -1,57 +1,110 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>코코넛 </title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&" />
-    <link rel="stylesheet" href="./style.css">
-    <style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>코코넛 갤러리</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-    </style>
-</head>
-
-<body>
+  <body>
     <header>
-        <h1>
-            <span class="material-symbols-outlined">agriculture</span>
-            새는 알을 깨고 나온다
-            <span class="material-symbols-outlined">sprinkler</span>        
-        </h1>
+      <h1>
+        <span class="material-symbols-outlined">agriculture</span>
+        새는 알을 깨고 나온다
+        <span class="material-symbols-outlined">sprinkler</span>
+      </h1>
     </header>
 
     <nav>
-       <a href="index.html">홈으로</a> |
-       <a href="subject.html">전공 탐구하기</a>
-       <a href="gallery.html">갤러리</a>
+      <a href="index.html">홈으로</a> |
+      <a href="subject.html">전공 탐구하기</a> |
+      <a href="gallery.html">갤러리</a>
     </nav>
- 
+
     <main>
-        <div class="'display-box">
-            <img id="targetlmg" src="새 폴더/maxresdefault.jpg" style="width: 100%;
-            max-width: 500px;"/>
-            <p id="targeDesc">원숭이</p>
-        </div>
-       <div class="thumb-list">
-    <img src="새 폴더/maxresdefault copy.jpg"
-         onclick="show('새 폴더/maxresdefault copy.jpg', '원숭이')" />
+      <div class="display-box">
+        <img
+          id="targetImg"
+          src="./새 폴더/maxresdefault.jpg"
+          style="width: 100%; max-width: 500px"
+          alt="메인 이미지"
+        />
+        <p id="targetDesc">이미지를 선택하세요</p>
+      </div>
 
-    <img src="새 폴더/hq720.jpg"
-         onclick="show('새 폴더/hq720.jpg', '아저씨')" />
-</div>
-</main>
-<script>
-    //imgPath: 클릭한 사진의 주소/text: 클릭한 사지느이 설명
-    function show(imgPath, text) {
-        //메인 전광판 사진의 주소(src)를 클릭한 사진으로 바꾼다.
-        document.getElementById("targetlmg").src = imgPath;
+      <div class="thumb-list">
+        <img
+          src="./새 폴더/maxresdefault copy.jpg"
+          onclick="show('./새 폴더/maxresdefault copy.jpg', '원숭이')"
+        />
+        <img
+          src="./새 폴더/hq720.jpg"
+          onclick="show('./새 폴더/hq720.jpg', '아저씨')"
+        />
+        <img
+          src="./새 폴더/861596178492177.jpg"
+          onclick="show('./새 폴더/861596178492177.jpg', '노동')"
+        />
+        <img
+          src="./새 폴더/images.jpg"
+          onclick="show('./새 폴더/images.jpg', '사기')"
+        />
+        <img
+          src="./새 폴더/Coconuts_-_single_and_cracked_open.jpg"
+          onclick="
+            show('./새 폴더/Coconuts_-_single_and_cracked_open.jpg', '반')
+          "
+        />
+        <img
+          src="./새 폴더/cc31f7cd626c17792653ce68e00f2d69.jpg"
+          onclick="
+            show('./새 폴더/cc31f7cd626c17792653ce68e00f2d69.jpg', '노동 주민')
+          "
+        />
+        <img
+          src="./새 폴더/24910_27862_5044.jpg"
+          onclick="show('./새 폴더/24910_27862_5044.jpg', '피구')"
+        />
+        <img
+          src="./새 폴더/217-16-24-20.jpg"
+          onclick="show('./새 폴더/217-16-24-20.jpg', '코코넛 포도')"
+        />
+        <img
+          src="./새 폴더/0b3ef4a08c444ba28a4ca1d8a382bd9d.jpg"
+          onclick="
+            show('./새 폴더/0b3ef4a08c444ba28a4ca1d8a382bd9d.jpg', '복권 당첨')
+          "
+        />
+        <img
+          src="./새 폴더/다운로드 (1).jpg"
+          onclick="show('./새 폴더/다운로드 (1).jpg', '빠다 코코낫')"
+          alt="과자"
+        />
+      </div>
+    </main>
 
-        //메인 전광판 설명의 글자(innerText)를 바꾼다.
-        document.getElementById("targetDesc").innerText = text;
-    }
-</script> 
-</body>
+    <footer>
+      <p>&copy; 2026 장준혁 문의: joondol1002@gmail.com</p>
+    </footer>
+
+    <script>
+      function show(imgPath, text) {
+        const mainImg = document.getElementById("targetImg");
+        const mainDesc = document.getElementById("targetDesc");
+        if (mainImg) mainImg.src = imgPath;
+        if (mainDesc) mainDesc.innerText = text;
+      }
+    </script>
+  </body>
 </html>

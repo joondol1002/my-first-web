@@ -1,125 +1,282 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>코코넛</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&" />
-    <link rel="stylesheet" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>코코넛 - 전공 탐구</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
     <style>
-
+      /* ✅ 2. 로그인 전 콘텐츠를 숨기기 위한 초기 설정 */
+      #content-wrapper {
+        display: none;
+      }
+      #login-box {
+        display: block; /* 처음에 로그인 상자는 보여야 함 */
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1>
-            <span class="material-symbols-outlined">agriculture</span>
-            새는 알을 깨고 나온다
-            <span class="material-symbols-outlined">sprinkler</span>
-        </h1>
+      <h1>
+        <span class="material-symbols-outlined">agriculture</span>
+        새는 알을 깨고 나온다
+        <span class="material-symbols-outlined">sprinkler</span>
+      </h1>
     </header>
 
     <nav>
-       <a href="index.html">홈으로</a> |
-       <a href="subject.html">전공 탐구하기</a>
-       <a href="gallery.html">갤러리</a>
+      <a href="index.html">홈으로</a> |
+      <a href="subject.html">전공 탐구하기</a> |
+      <a href="gallery.html">갤러리</a>
     </nav>
 
     <main>
+      <div
+        id="login-box"
+        style="
+          text-align: center;
+          margin: 50px auto;
+          max-width: 400px;
+          padding: 20px;
+          border: 1px solid #ddd;
+          border-radius: 15px;
+          background: #fff;
+        "
+      >
+        <h2>🔒 시스템 인증이 필요합니다</h2>
+        <p style="color: #666; margin-bottom: 20px">
+          내용을 보려면 성함과 암호(1234)를 입력하세요.
+        </p>
+        <div style="margin-bottom: 10px">
+          <input
+            type="text"
+            id="userId"
+            placeholder="사용자 이름"
+            style="
+              width: 80%;
+              padding: 10px;
+              border-radius: 5px;
+              border: 1px solid #ccc;
+            "
+          />
+        </div>
+        <div style="margin-bottom: 20px">
+          <input
+            type="password"
+            id="userPw"
+            placeholder="암호 입력"
+            style="
+              width: 80%;
+              padding: 10px;
+              border-radius: 5px;
+              border: 1px solid #ccc;
+            "
+          />
+        </div>
+        <button
+          onclick="checkLogin()"
+          style="
+            width: 85%;
+            padding: 12px;
+            background: #2e7d32;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+          "
+        >
+          입장하기
+        </button>
+      </div>
+
+      <div id="content-wrapper">
+        <div
+          id="secret-area"
+          style="
+            text-align: center;
+            margin: 20px;
+            padding: 15px;
+            background: #e8f5e9;
+            border-radius: 10px;
+          "
+        >
+          <h3 style="color: #2e7d32; margin: 0">
+            👋 <span id="user-display"></span>님, 반갑습니다!
+          </h3>
+          <button
+            onclick="logout()"
+            style="
+              margin-top: 10px;
+              cursor: pointer;
+              background: none;
+              border: 1px solid #2e7d32;
+              color: #2e7d32;
+              padding: 5px 10px;
+              border-radius: 5px;
+            "
+          >
+            로그아웃
+          </button>
+        </div>
+
         <section class="agriculture-portfolio">
-            <article class="crop-item">
-                <figure class="crop-image">
-                    <img src="Coconuts_-_single_and_cracked_open.jpg" alt="직접 재배한 농작물사진" />
-                    <figcaption>그림 1. 본인이 직접 재배한 농작물 실물</figcaption>
-                </figure>
+          <article class="crop-item">
+            <div class="crop-details">
+              <h3>농작물 명칭: 코코넛</h3>
+              <section class="info-block">
+                <h4>재배 및 생산 특성</h4>
+                <ul>
+                  <li><strong>품종:</strong> 코코넛야자수</li>
+                  <li>
+                    <strong>재배 환경:</strong> 해안가 중심 (염분 내성 탁월)
+                  </li>
+                </ul>
+              </section>
 
-                <div class="crop-details">
-                    <h3>농작물 명칭: 코코넛</h3>
-                    <section class="info-block">
-                        <h4>재배 및 생산 특성</h4>
-                        <ul>
-                            <li><strong>품종:</strong> 코코넛야자수</li>
-                            <li><strong>재배 환경:</strong> 해안가 중심: 바닷바람에 강하고, 염분이 있는 토양에서도 견디는 능력이 탁월하여 주로 해안가에서 재배됩니다.</li>
-                        </ul>
-                    </section>
-
-                    <section class="info-block distribution">
-                        <h4> 유통 구조 설계</h4>
-                        <div class="step-guide">
-                            <span>생산자(나)</span> → <span>로컬푸드 직매장</span> → <span>최종 소비자</span>
-                        </div>
-                        <ul>
-                            <li><strong>물류 방식:</strong> 운송 및 보관: 코코넛은 신선도 유지가 중요하므로 주로 냉장 컨테이너를 통해 운송됩니다. 태국, 베트남 등지에서 생산된 코코넛은 도매시장 냉장 창고를 거쳐 슈퍼마켓, 음료 가게 등으로 유통됩니다.</li>
-                            <li><strong>판매 전략:</strong> 코코넛 판매는 건강 기능성(천연 수분 보충), 클린 라벨 트렌드, 그리고 지속 가능한 가치(친환경 포장, 다양한 활용도)에 집중하여 틈새 시장을 공략</li>
-                        </ul>
-                        <p><a href="https://namu.wiki/w/%EC%BD%94%EC%BD%94%EB%84%9B" class="my-button">코코넛에 대해 더 알아보기</a></p>
-                    </section>
+              <section class="info-block distribution">
+                <h4>유통 구조 설계</h4>
+                <div class="step-guide" style="margin: 15px 0">
+                  <span>생산자(나)</span> → <span>로컬푸드 직매장</span> →
+                  <span>최종 소비자</span>
                 </div>
-            </article>
+                <p>
+                  <a
+                    href="https://namu.wiki/w/%EC%BD%94%EC%BD%94%EB%84%9B"
+                    class="my-button"
+                    target="_blank"
+                    >나무위키에서 더 알아보기</a
+                  >
+                </p>
+              </section>
+            </div>
+          </article>
         </section>
 
         <section id="order-area">
-            <hr>
-            <h2>📦 온라인 주문하기</h2>
-            <form id="orderForm">
-                <div class="input-row">
-                    <div class="input-group">
-                        <label for="userName">주문자 성함</label>
-                        <input type="text" id="userName" placeholder="실명을 입력하세요">
-                    </div>
-                </div>
+          <hr />
+          <h2>📦 온라인 주문하기</h2>
+          <form id="orderForm">
+            <div class="input-group">
+              <label for="userName">주문자 성함</label>
+              <input
+                type="text"
+                id="userName"
+                placeholder="실명을 입력하세요"
+              />
+            </div>
 
-                <div class="input-row">
-                    <div class="input-group">
-                        <label for="unitweight">구매 단위 선택</label>
-                        <select id="unitweight">
-                            <option value="15000">코코넛 1kg (15,000원)</option>
-                            <option value="35000">코코넛 3kg (35,000원)</option>
-                            <option value="45000">코코넛 5kg (45,000원)</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <label for="quantity">주문 수량 (박스)</label>
-                        <input type="number" id="quantity" value="1" min="1" max="10">
-                    </div>
-                </div>
+            <div class="input-row">
+              <div class="input-group">
+                <label for="unitweight">구매 단위 선택</label>
+                <select id="unitweight">
+                  <option value="15000">코코넛 1kg (15,000원)</option>
+                  <option value="35000">코코넛 3kg (35,000원)</option>
+                  <option value="45000">코코넛 5kg (45,000원)</option>
+                </select>
+              </div>
+              <div class="input-group">
+                <label for="quantity">주문 수량 (박스)</label>
+                <input type="number" id="quantity" value="1" min="1" max="10" />
+              </div>
+            </div>
 
-                <div class="input-group">
-                    <label for="userPhone">연락처</label>
-                    <input type="text" id="userPhone" placeholder="010-0000-0000">
-                </div>
+            <div class="input-group">
+              <label for="userPhone">연락처</label>
+              <input type="text" id="userPhone" placeholder="010-0000-0000" />
+            </div>
 
-                <div class="input-group">
-                    <label for="deliveryfee">배송 방식 선택</label>
-                    <select id="deliveryfee">
-                        <option value="3000">일반 택배(3000원)</option>
-                        <option value="5000">신선 새벽 배송(5000원)</option>
-                        <option value="0">광주 로컬푸드 매장 픽업(무료)</option>
-                    </select>
-                </div>
+            <div class="input-group">
+              <label for="deliveryfee">배송 방식 선택</label>
+              <select id="deliveryfee">
+                <option value="3000">일반 택배(3000원)</option>
+                <option value="5000">신선 새벽 배송(5000원)</option>
+                <option value="0">광주 로컬푸드 매장 픽업(무료)</option>
+              </select>
+            </div>
 
-                <div class="input-group">
-                    <label>배송 메시지</label>
-                    <textarea placeholder="부재 시 문 앞에 놓아주세요"></textarea>
-                </div>
+            <button type="button" class="order-btn" onclick="processOrder()">
+              지금 바로 주문 완료
+            </button>
+          </form>
 
-                <button type="button" class="order-btn" onclick="processOrder()">지금 바로 주문 완료</button>
-            </form>
-            
-            <div id="receipt" class="receipt-box"></div>
+          <div id="receipt" class="receipt-box"></div>
         </section>
+      </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 장준혁 문의: joondol1002@gmail.com</p>
+      <p>&copy; 2026 장준혁 문의: joondol1002@gmail.com</p>
     </footer>
 
     <script>
-    function processOrder() {
+      // 페이지가 열릴 때 실행
+      window.onload = function () {
+        const isLoggedIn = localStorage.getItem("isLoggedIn");
+        const savedName = localStorage.getItem("savedName");
+
+        // 초기 비밀번호가 없다면 '1234'로 설정
+        if (!localStorage.getItem("userPassword")) {
+          localStorage.setItem("userPassword", "1234");
+        }
+
+        if (isLoggedIn === "true") {
+          // 로그인 성공 상태
+          document.getElementById("login-box").style.display = "none";
+          document.getElementById("content-wrapper").style.display = "block";
+          document.getElementById("user-display").innerText = savedName;
+        } else {
+          // 로그인 전 상태
+          document.getElementById("login-box").style.display = "block";
+          document.getElementById("content-wrapper").style.display = "none";
+        }
+      };
+
+      // 로그인 확인 함수
+      function checkLogin() {
+        const nameInput = document.getElementById("userId").value;
+        const pwInput = document.getElementById("userPw").value;
+        const correctPw = localStorage.getItem("userPassword") || "1234";
+
+        if (nameInput.trim() === "") {
+          alert("이름을 입력해주세요.");
+          return;
+        }
+
+        if (pwInput === correctPw) {
+          localStorage.setItem("isLoggedIn", "true");
+          localStorage.setItem("savedName", nameInput);
+          alert(nameInput + "님, 환영합니다!");
+          location.reload(); // 새로고침하여 콘텐츠 표시
+        } else {
+          alert("비밀번호가 틀렸습니다. (초기 암호: 1234)");
+        }
+      }
+
+      // 로그아웃 함수
+      function logout() {
+        if (confirm("로그아웃 하시겠습니까?")) {
+          localStorage.removeItem("isLoggedIn");
+          localStorage.removeItem("savedName");
+          location.reload();
+        }
+      }
+
+      // 주문 처리 함수
+      function processOrder() {
         const name = document.getElementById("userName").value;
         const phone = document.getElementById("userPhone").value;
         const quantity = Number(document.getElementById("quantity").value);
@@ -129,50 +286,42 @@
         const productPrice = Number(unitSelect.value);
         const productName = unitSelect.options[unitSelect.selectedIndex].text;
 
-  
         if (name.trim() === "" || phone.trim() === "") {
-            alert("⚠️ 주문자 성함과 연락처를 모두 입력해 주세요!");
-            return;
+          alert("⚠️ 주문자 성함과 연락처를 입력해 주세요!");
+          return;
         }
 
         const basePrice = productPrice * quantity;
-        
         let deliveryText = deliveryFee.toLocaleString() + "원";
+
+        // 무료 배송 조건 (3만원 이상)
         if (basePrice >= 30000 && deliveryFee > 0) {
-            deliveryFee = 0;
-            deliveryText = "무료 (3만원 이상 구매혜택)";
+          deliveryFee = 0;
+          deliveryText = "무료 (3만원 이상 구매 혜택)";
         } else if (deliveryFee === 0) {
-            deliveryText = "무료 (매장 픽업)";
+          deliveryText = "무료 (매장 픽업)";
         }
 
         const totalPrice = basePrice + deliveryFee;
         const dateString = new Date().toLocaleString();
 
-        // 5. 영수증 출력
         const receipt = document.getElementById("receipt");
         receipt.innerHTML = `
-            <h3>📄 주문 확인 영수증</h3>
-            <p style="color: gray; font-size: 0.8em;">주문 시각: ${dateString}</p>
-            <hr>
-            <p><strong>주문자:</strong> ${name} 님</p>
-            <p><strong>연락처:</strong> ${phone}</p>
-            <p><strong>주문 상품:</strong> ${productName}</p>
-            <p><strong>주문 수량:</strong> ${quantity} 박스</p>
-            <p><strong>배송비:</strong> ${deliveryText}</p>
-            <hr>
-            <p style="font-size: 1.2em; margin-top: 10px;">
-                <strong>최종 결제 금액:</strong>
-                <span style="color:red; font-weight:bold;">${totalPrice.toLocaleString()}원</span>
-            </p>
-            <p style="text-align:center; margin-top:15px;">이용해 주셔서 감사합니다 🛍️</p>
+          <h3>📄 주문 확인 영수증</h3>
+          <p style="color: gray; font-size: 0.8em;">주문 시각: ${dateString}</p>
+          <hr>
+          <p><strong>주문자:</strong> ${name} 님</p>
+          <p><strong>연락처:</strong> ${phone}</p>
+          <p><strong>주문 상품:</strong> ${productName}</p>
+          <p><strong>주문 수량:</strong> ${quantity} 박스</p>
+          <p><strong>배송비:</strong> ${deliveryText}</p>
+          <hr>
+          <p style="font-size: 1.2em;"><strong>총 결제 금액:</strong> <span style="color:red;">${totalPrice.toLocaleString()}원</span></p>
+          <p style="text-align:center;">감사합니다! 🛍️</p>
         `;
-
-        // 영수증 영역 보이기
         receipt.style.display = "block";
-        
-        // 화면을 영수증 위치로 부드럽게 이동
-        receipt.scrollIntoView({ behavior: 'smooth' });
-    }
+        receipt.scrollIntoView({ behavior: "smooth" });
+      }
     </script>
-</body>
+  </body>
 </html>

@@ -1,86 +1,80 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자기소개</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
-    <style>
-        /* 1.전체 배경과 기본 폰트 */
-        body{
-            
-        /* [배경색] colcr Hunt 팔레트에서 가장 연하고 밝은 */    
-        background-color: #F6E7BC;
-        color: #0B2D72;
-        line-height: 1.7;
-        margin: 0;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>코코넛 - 홈</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&"
+    />
 
-    /* 2.헤더 꾸미기 */
-    header {
-        background-color: #EED9B9;
-        color: #D62828;
-        text-align: #FFDE42;
-        padding: 50px 0;
-    }
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-    /* 3.메뉴바(nav) 꾸미기 */
-    nav {
-        text-align: #4C5C2D;
-        padding: 15px;
-        background-color: #25671E;
-    }
-header, footer {
-    padding: 50px 0;
-}
+  <body>
+    <header>
+      <h1>
+        <span class="material-symbols-outlined">agriculture</span>
+        새는 알을 깨고 나온다
+        <span class="material-symbols-outlined">sprinkler</span>
+      </h1>
+    </header>
 
-main {
-    width: 80%;
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 30px;
-    background-color: white;
-    border: 1px solid #ddd;
-}
-
-    my-button {
-        display: inline-block;
-        padding: 15px 30px;
-        background-color: #3F71AF;
-        color: white;
-        text-emphasis: none;
-        border-radius: 30px;                    
-        margin-top: 20px;
-        transition: 0.3s;
-    } 
-
-    .my-button:hover {
-        background-color: #112D4E;
-        transform: translateY(-3px);
-    }
-
-    </style>
-</head>              
-<header><h1>두려움은 도전의 시작이다.</h1> </header>
-<body>
     <nav>
-       <a href="index.html">홈으로</a> |
-       <a href="subject.html">전공 탐구하기</a>
-       <a href="gallery.html">갤러리</a>
+      <a href="index.html">홈으로</a> |
+      <a href="subject.html">전공 탐구하기</a> |
+      <a href="gallery.html">갤러리</a>
     </nav>
+
     <main>
-         <ul>
-            <li>게임 하기</li>
-            <li>돈많은 백수</li>
-            <li>고기</li>
-         </ul>
-         <p><a href="#" class="my-button">나를 대해 더 알아보기</a></p>
-        </main>
-    <img src="사진.jpg" alt="윈시인" width="700">
-</body>
-<footer>
-    <p>joondol1002@gmail.com</p>
-</footer>
+      <section class="profile-section">
+        <h2>👋 환영합니다!</h2>
+        <p>
+          저의 개인 홈페이지에 오신 것을 환영합니다. 아래에서 저에 대한 정보를
+          확인해 보세요.
+        </p>
+        <hr />
+
+        <article class="info-block">
+          <h3>🎨 나의 취미</h3>
+          <p>
+            저의 취미는 코딩과 더불어 새로운 기술을 배우는 것입니다. 특히 웹
+            페이지를 예쁘게 꾸미는 CSS 작업에 흥미를 느끼고 있습니다.
+          </p>
+        </article>
+
+        <article class="info-block">
+          <h3>🚀 장래희망</h3>
+          <p>
+            저의 꿈은 농업과 IT 기술을 접목시킨
+            <strong>스마트팜 전문가</strong>가 되는 것입니다. 효율적인 농작물
+            재배 시스템을 구축하여 미래 농업을 선도하고 싶습니다.
+          </p>
+        </article>
+
+        <article class="info-block">
+          <h3>🍕 좋아하는 음식</h3>
+          <p>
+            저는 신선한 <strong>코코넛</strong>과 그를 활용한 요리들을 가장
+            좋아합니다. 시원한 코코넛 워터는 언제 마셔도 활력을 줍니다.
+          </p>
+        </article>
+      </section>
+
+      <div style="text-align: center">
+        <a href="subject.html" class="my-button">전공 탐구하러 가기</a>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 장준혁 문의: joondol1002@gmail.com</p>
+    </footer>
+  </body>
 </html>
