@@ -14,16 +14,13 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&"
     />
-
-    <link rel="stylesheet" href="style.css" />
-
+    <link rel="stylesheet" href="./style.css" />
     <style>
-      /* ✅ 2. 로그인 전 콘텐츠를 숨기기 위한 초기 설정 */
       #content-wrapper {
         display: none;
       }
       #login-box {
-        display: block; /* 처음에 로그인 상자는 보여야 함 */
+        display: block;
       }
     </style>
   </head>
@@ -58,7 +55,7 @@
       >
         <h2>🔒 시스템 인증이 필요합니다</h2>
         <p style="color: #666; margin-bottom: 20px">
-          내용을 보려면 성함과 암호(1234)를 입력하세요.
+          내용을 보려면 성함과 암호(기본:1234)를 입력하세요.
         </p>
         <div style="margin-bottom: 10px">
           <input
@@ -117,6 +114,33 @@
           <h3 style="color: #2e7d32; margin: 0">
             👋 <span id="user-display"></span>님, 반갑습니다!
           </h3>
+          <div
+            style="
+              margin-top: 15px;
+              padding: 10px;
+              border-top: 1px solid #c8e6c9;
+            "
+          >
+            <input
+              type="password"
+              id="newPw"
+              placeholder="새 비밀번호"
+              style="padding: 5px; border-radius: 4px; border: 1px solid #ccc"
+            />
+            <button
+              onclick="changePassword()"
+              style="
+                cursor: pointer;
+                background: #388e3c;
+                color: white;
+                border: none;
+                padding: 6px 12px;
+                border-radius: 5px;
+              "
+            >
+              비밀번호 변경
+            </button>
+          </div>
           <button
             onclick="logout()"
             style="
@@ -135,34 +159,11 @@
 
         <section class="agriculture-portfolio">
           <article class="crop-item">
-            <div class="crop-details">
-              <h3>농작물 명칭: 코코넛</h3>
-              <section class="info-block">
-                <h4>재배 및 생산 특성</h4>
-                <ul>
-                  <li><strong>품종:</strong> 코코넛야자수</li>
-                  <li>
-                    <strong>재배 환경:</strong> 해안가 중심 (염분 내성 탁월)
-                  </li>
-                </ul>
-              </section>
-
-              <section class="info-block distribution">
-                <h4>유통 구조 설계</h4>
-                <div class="step-guide" style="margin: 15px 0">
-                  <span>생산자(나)</span> → <span>로컬푸드 직매장</span> →
-                  <span>최종 소비자</span>
-                </div>
-                <p>
-                  <a
-                    href="https://namu.wiki/w/%EC%BD%94%EC%BD%94%EB%84%9B"
-                    class="my-button"
-                    target="_blank"
-                    >나무위키에서 더 알아보기</a
-                  >
-                </p>
-              </section>
-            </div>
+            <h3>농작물 명칭: 코코넛</h3>
+            <ul>
+              <li><strong>품종:</strong> 코코넛야자수</li>
+              <li><strong>재배 환경:</strong> 해안가 중심</li>
+            </ul>
           </article>
         </section>
 
@@ -171,156 +172,86 @@
           <h2>📦 온라인 주문하기</h2>
           <form id="orderForm">
             <div class="input-group">
-              <label for="userName">주문자 성함</label>
-              <input
-                type="text"
-                id="userName"
-                placeholder="실명을 입력하세요"
-              />
+              <label>주문자 성함</label
+              ><input type="text" id="userName" placeholder="실명 입력" />
             </div>
-
             <div class="input-row">
               <div class="input-group">
-                <label for="unitweight">구매 단위 선택</label>
+                <label>구매 단위</label>
                 <select id="unitweight">
-                  <option value="15000">코코넛 1kg (15,000원)</option>
-                  <option value="35000">코코넛 3kg (35,000원)</option>
-                  <option value="45000">코코넛 5kg (45,000원)</option>
+                  <option value="15000">1kg (15,000원)</option>
+                  <option value="35000">3kg (35,000원)</option>
                 </select>
               </div>
               <div class="input-group">
-                <label for="quantity">주문 수량 (박스)</label>
-                <input type="number" id="quantity" value="1" min="1" max="10" />
+                <label>수량</label
+                ><input type="number" id="quantity" value="1" min="1" />
               </div>
             </div>
-
             <div class="input-group">
-              <label for="userPhone">연락처</label>
-              <input type="text" id="userPhone" placeholder="010-0000-0000" />
+              <label>연락처</label
+              ><input type="text" id="userPhone" placeholder="010-0000-0000" />
             </div>
-
-            <div class="input-group">
-              <label for="deliveryfee">배송 방식 선택</label>
-              <select id="deliveryfee">
-                <option value="3000">일반 택배(3000원)</option>
-                <option value="5000">신선 새벽 배송(5000원)</option>
-                <option value="0">광주 로컬푸드 매장 픽업(무료)</option>
-              </select>
-            </div>
-
             <button type="button" class="order-btn" onclick="processOrder()">
-              지금 바로 주문 완료
+              주문 완료
             </button>
           </form>
-
           <div id="receipt" class="receipt-box"></div>
         </section>
       </div>
     </main>
 
-    <footer>
-      <p>&copy; 2026 장준혁 문의: joondol1002@gmail.com</p>
-    </footer>
+    <footer><p>&copy; 2026 장준혁</p></footer>
 
     <script>
-      // 페이지가 열릴 때 실행
       window.onload = function () {
-        const isLoggedIn = localStorage.getItem("isLoggedIn");
-        const savedName = localStorage.getItem("savedName");
-
-        // 초기 비밀번호가 없다면 '1234'로 설정
-        if (!localStorage.getItem("userPassword")) {
-          localStorage.setItem("userPassword", "1234");
-        }
-
-        if (isLoggedIn === "true") {
-          // 로그인 성공 상태
+        if (localStorage.getItem("isLoggedIn") === "true") {
           document.getElementById("login-box").style.display = "none";
           document.getElementById("content-wrapper").style.display = "block";
-          document.getElementById("user-display").innerText = savedName;
-        } else {
-          // 로그인 전 상태
-          document.getElementById("login-box").style.display = "block";
-          document.getElementById("content-wrapper").style.display = "none";
+          document.getElementById("user-display").innerText =
+            localStorage.getItem("savedName");
         }
       };
 
-      // 로그인 확인 함수
       function checkLogin() {
-        const nameInput = document.getElementById("userId").value;
-        const pwInput = document.getElementById("userPw").value;
-        const correctPw = localStorage.getItem("userPassword") || "1234";
+        const name = document.getElementById("userId").value;
+        const pw = document.getElementById("userPw").value;
+        const currentPw = localStorage.getItem("userPassword") || "1234";
+        if (pw === currentPw && name !== "") {
+          localStorage.setItem("isLoggedIn", "true");
+          localStorage.setItem("savedName", name);
+          localStorage.setItem("userPassword", currentPw);
+          location.reload();
+        } else {
+          alert("인증 실패!");
+        }
+      }
 
-        if (nameInput.trim() === "") {
-          alert("이름을 입력해주세요.");
+      function changePassword() {
+        const newPw = document.getElementById("newPw").value;
+        if (newPw.trim() === "") {
+          alert("새 비밀번호를 입력하세요.");
           return;
         }
-
-        if (pwInput === correctPw) {
-          localStorage.setItem("isLoggedIn", "true");
-          localStorage.setItem("savedName", nameInput);
-          alert(nameInput + "님, 환영합니다!");
-          location.reload(); // 새로고침하여 콘텐츠 표시
-        } else {
-          alert("비밀번호가 틀렸습니다. (초기 암호: 1234)");
-        }
+        localStorage.setItem("userPassword", newPw);
+        alert("비밀번호가 변경되었습니다.");
+        document.getElementById("newPw").value = "";
       }
 
-      // 로그아웃 함수
       function logout() {
-        if (confirm("로그아웃 하시겠습니까?")) {
-          localStorage.removeItem("isLoggedIn");
-          localStorage.removeItem("savedName");
-          location.reload();
-        }
+        localStorage.removeItem("isLoggedIn");
+        location.reload();
       }
 
-      // 주문 처리 함수
       function processOrder() {
         const name = document.getElementById("userName").value;
-        const phone = document.getElementById("userPhone").value;
-        const quantity = Number(document.getElementById("quantity").value);
-        let deliveryFee = Number(document.getElementById("deliveryfee").value);
-
-        const unitSelect = document.getElementById("unitweight");
-        const productPrice = Number(unitSelect.value);
-        const productName = unitSelect.options[unitSelect.selectedIndex].text;
-
-        if (name.trim() === "" || phone.trim() === "") {
-          alert("⚠️ 주문자 성함과 연락처를 입력해 주세요!");
+        if (name === "") {
+          alert("이름을 입력하세요.");
           return;
         }
-
-        const basePrice = productPrice * quantity;
-        let deliveryText = deliveryFee.toLocaleString() + "원";
-
-        // 무료 배송 조건 (3만원 이상)
-        if (basePrice >= 30000 && deliveryFee > 0) {
-          deliveryFee = 0;
-          deliveryText = "무료 (3만원 이상 구매 혜택)";
-        } else if (deliveryFee === 0) {
-          deliveryText = "무료 (매장 픽업)";
-        }
-
-        const totalPrice = basePrice + deliveryFee;
-        const dateString = new Date().toLocaleString();
-
-        const receipt = document.getElementById("receipt");
-        receipt.innerHTML = `
-          <h3>📄 주문 확인 영수증</h3>
-          <p style="color: gray; font-size: 0.8em;">주문 시각: ${dateString}</p>
-          <hr>
-          <p><strong>주문자:</strong> ${name} 님</p>
-          <p><strong>연락처:</strong> ${phone}</p>
-          <p><strong>주문 상품:</strong> ${productName}</p>
-          <p><strong>주문 수량:</strong> ${quantity} 박스</p>
-          <p><strong>배송비:</strong> ${deliveryText}</p>
-          <hr>
-          <p style="font-size: 1.2em;"><strong>총 결제 금액:</strong> <span style="color:red;">${totalPrice.toLocaleString()}원</span></p>
-          <p style="text-align:center;">감사합니다! 🛍️</p>
-        `;
-        receipt.style.display = "block";
-        receipt.scrollIntoView({ behavior: "smooth" });
+        document.getElementById("receipt").style.display = "block";
+        document.getElementById("receipt").innerHTML =
+          `<h3>주문 완료: ${name}님</h3>`;
       }
     </script>
   </body>
